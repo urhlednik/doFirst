@@ -471,6 +471,8 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         
+        self.backgroundColor = [UIColor whiteColor];
+        self.accessoryType = UITableViewCellStyleDefault;
         self.height = 250;
         
         // Initialization code
@@ -493,6 +495,8 @@
     fr = CGRectMake(5, 10,100,25);
     self.titleLabel.frame = fr;
     self.titleLabel.text = @"Send Mail";
+    self.titleLabel.textColor = [UIColor blackColor];
+    self.titleLabel.backgroundColor = [UIColor clearColor];
     
     fr = CGRectMake(120, 10,120,35);
     self.onOffSwitch.frame = fr;
