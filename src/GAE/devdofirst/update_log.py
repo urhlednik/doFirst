@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# Copyright 2007 Google Inc.
+	# Copyright 2007 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,9 +15,18 @@
 # limitations under the License.
 #
 import webapp2
+import logging
+import json
 
-class Page_Main(webapp2.RequestHandler):
+class Page_Updata_log(webapp2.RequestHandler):
     def get(self):
-        self.response.write('hi sensorTag!')
+    	self.response.write("hi update_log page!")
 
-app = webapp2.WSGIApplication([('/', Page_Main)], debug=True)
+    def post(self):
+		getSensorData = self.request.get("sensor_data")
+		self.response.write(getSensorData)
+		logging.error(getSensorData)
+		json_value = json.loads(getSensorData)
+		logging.error(json_value["sensor_data"])
+
+app = webapp2.WSGIApplication([('/update_log', Page_Updata_log)], debug=True)

@@ -1,5 +1,5 @@
 application: devdofirst
-version: 1-0-test
+version: 1-0-3
 runtime: python27
 api_version: 1
 threadsafe: yes
@@ -9,8 +9,11 @@ handlers:
   static_files: favicon.ico
   upload: favicon\.ico
 
-- url: .*
+- url: /
   script: main.app
+
+- url: /update_log/*
+  script: update_log.app
 
 libraries:
 - name: webapp2
