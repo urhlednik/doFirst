@@ -12,6 +12,17 @@
 
 @implementation NetworkClient
 
+static NetworkClient *sharedInstance = nil;
+
+// Get the shared instance and create it if necessary.
++ (NetworkClient *)sharedInstance {
+    if (sharedInstance == nil) {
+        sharedInstance = [[super allocWithZone:NULL] init];
+    }
+    
+    return sharedInstance;
+}
+
 
 - (id)init
 {

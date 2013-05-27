@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "SBJson.h"
 
-#define SERVER_ADDR @"127.0.0.1"
+#define SERVER_ADDR @"http://devdofirst.appspot.com/"
 
 @interface NetworkClient : NSObject
 {
@@ -18,5 +18,8 @@
 }
 
 - (void) requestLogList:(NSDictionary *)conditions;
+
++ (id)sharedInstance;
+
 
 @end

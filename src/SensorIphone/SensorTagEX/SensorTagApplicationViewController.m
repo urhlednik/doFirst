@@ -7,6 +7,7 @@
  */
 
 #import "SensorTagApplicationViewController.h"
+#import "NetworkClient.h"
 
 @interface SensorTagApplicationViewController ()
 
@@ -684,10 +685,30 @@
     
     [self.vals addObject:newVal];
     
-    
-    if (self.sendControl.onOffSwitch.on)
+    static unsigned int count = 0;
+    if (self.sendControl.onOffSwitch.on && (count++ % 50)==0)
     {
+        NSMutableArray *sensorData = [[NSMutableArray alloc] init];
+        for (int ii=0; ii < self.vals.count; ii++) {
+            sensorTagValues *s = [self.vals objectAtIndex:ii];
+            [sensorData addObject:[NSString stringWithFormat:@"%@,%0.1f,%0.1f,%0.2f,%0.2f,%0.2f,%0.0f,%0.1f,%0.1f,%0.1f,%0.1f,%0.1f,%0.1f,%0.1f\n",s.timeStamp,s.tAmb,s.tIR,s.accX,s.accY,s.accZ,s.press,s.humidity,s.gyroX,s.gyroY,s.gyroZ,s.magX,s.magY,s.magZ]];
+        }
         
+        if (sensorData.count > 0)
+        {
+            NSMutableDictionary *json_value = [[NSMutableDictionary alloc] init];
+            [json_value setObject:sensorData forKey:@"sensor_data"];
+            
+            SBJsonWriter* writer = [ [ SBJsonWriter alloc ] init ];
+            [ writer setHumanReadable: YES ];
+            
+            NSString* jsonString = [ writer stringWithObject:json_value ];
+            NSLog( @"%@", jsonString );
+            
+            NSMutableDictionary *args = [[NSMutableDictionary alloc] init];
+            [args setObject:jsonString forKey:@"sensor_data"];
+            [[NetworkClient sharedInstance] requestLogList:args];
+        }
     }
 }
 
