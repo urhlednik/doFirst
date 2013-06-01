@@ -20,7 +20,7 @@ import json
 
 class Page_Updata_log(webapp2.RequestHandler):
     def get(self):
-    	self.response.write("hi update_log page!")
+    	self.response.write("hi Go Gun too late page!")
 
     def post(self):
 		getSensorData = self.request.get("sensor_data")
