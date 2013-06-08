@@ -10,13 +10,13 @@ handlers:
   upload: favicon\.ico
 
 - url: /
-  script: main.app
+  script: page_main.app
 
 - url: /update_log/*
-  script: update_log.app
+  script: page_update_log.app
 
 - url: /changgun/*
-  script: changgun.app
+  script: page_changgun.app
 
 libraries:
 - name: webapp2

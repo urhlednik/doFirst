@@ -15,9 +15,10 @@
 # limitations under the License.
 #
 import webapp2
+import logging
 
 class Page_Main(webapp2.RequestHandler):
     def get(self):
-        self.response.write('hi sensorTag!')
+		self.response.write('hi sensorTag!')
 
 app = webapp2.WSGIApplication([('/', Page_Main)], debug=True)
