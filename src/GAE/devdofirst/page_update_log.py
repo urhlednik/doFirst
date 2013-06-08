@@ -19,21 +19,51 @@ import logging
 import json
 import dataset_sensor
 import re
+import string
+from google.appengine.ext import db
 
 class ProcessDataTrans:
-	def __init__(self, json_sensor_data):
-		self.json_sensor_data = json_sensor_data
-		logging.debug(self.json_sensor_data)		
+	def __init__(self, json_data):
+		self.json_data = json_data
+
+		device_id = json_data["DeviceId"]
+		data_purpose = json_data["DataPurpose"]
+		sensor_datas = json_data["sensor_data"]
+
+		for item in sensor_datas:
+			splited_data = item.split(",")
+			for k in range(len(splited_data)):
+				splited_data[k] = splited_data[k].replace("\n", "")
+
+			sDB = dataset_sensor.SensorDataDB()
+			sDB.DeviceId = device_id
+			sDB.DataPurpose = data_purpose
+			sDB.TimeStamp = splited_data[0]
+			sDB.TemperatureAmbient = splited_data[1]
+			sDB.TemperatureIR = splited_data[2]
+			sDB.AccelerometerX = splited_data[3]
+			sDB.AccelerometerY = splited_data[4]
+			sDB.AccelerometerZ = splited_data[5]
+			sDB.BarometricPressure = splited_data[6]
+			sDB.Humidity = splited_data[7]
+			sDB.GyroX = splited_data[8]
+			sDB.GyroY = splited_data[9]
+			sDB.GyroZ = splited_data[10]
+			sDB.MagnetometerX = splited_data[11]
+			sDB.MagnetometerY = splited_data[12]
+			sDB.MagnetometerZ = splited_data[13]
+			sDB.put()
 
 class Page_Updata_log(webapp2.RequestHandler):
     def get(self):
     	self.response.write("hi update_log page!")
 
     def post(self):
-		getSensorData = self.request.get("sensor_data")
-		self.response.write(getSensorData)
-		json_value = json.loads(getSensorData)
-		ProcessDataTrans(json_value)
+		getData = self.request.get("sensor_data")
+		self.response.write(getData)
+		json_data = json.loads(getData)
+
+		ProcessDataTrans(json_data)
 
 app = webapp2.WSGIApplication([('/update_log', Page_Updata_log)], debug=True)
 

@@ -1,5 +1,5 @@
 application: devdofirst
-version: 1-0-4
+version: 1-0-5
 runtime: python27
 api_version: 1
 threadsafe: yes
@@ -17,6 +17,9 @@ handlers:
 
 - url: /changgun/*
   script: page_changgun.app
+
+- url : /view_log/*
+  script: page_view_log.app
 
 libraries:
 - name: webapp2

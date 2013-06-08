@@ -2,7 +2,7 @@
 
 from google.appengine.ext import db
 
-class SensorData(db.Model):
+class SensorDataDB(db.Model):
 	DeviceId = db.StringProperty()
 	DataPurpose = db.StringProperty()
 	TimeStamp = db.StringProperty()
