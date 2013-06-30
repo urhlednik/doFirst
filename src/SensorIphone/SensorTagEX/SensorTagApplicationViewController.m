@@ -8,6 +8,8 @@
 
 #import "SensorTagApplicationViewController.h"
 #import "NetworkClient.h"
+#import "ConfigViewController.h"
+#import "UIDevice+IdentifierAddition.h"
 
 @interface SensorTagApplicationViewController ()
 
@@ -138,7 +140,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *mailer = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(sendMail:)];
+    UIBarButtonItem *mailer = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(viewConfig:)];
     
     [self.navigationItem setRightBarButtonItem:mailer];
     
@@ -691,12 +693,15 @@
         NSMutableArray *sensorData = [[NSMutableArray alloc] init];
         for (int ii=0; ii < self.vals.count; ii++) {
             sensorTagValues *s = [self.vals objectAtIndex:ii];
-            [sensorData addObject:[NSString stringWithFormat:@"%@,%0.1f,%0.1f,%0.2f,%0.2f,%0.2f,%0.0f,%0.1f,%0.1f,%0.1f,%0.1f,%0.1f,%0.1f,%0.1f\n",s.timeStamp,s.tAmb,s.tIR,s.accX,s.accY,s.accZ,s.press,s.humidity,s.gyroX,s.gyroY,s.gyroZ,s.magX,s.magY,s.magZ]];
+            [sensorData addObject:[NSString stringWithFormat:@"%@,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f",s.timeStamp,s.tAmb,s.tIR,s.accX,s.accY,s.accZ,s.press,s.humidity,s.gyroX,s.gyroY,s.gyroZ,s.magX,s.magY,s.magZ]];
         }
         
         if (sensorData.count > 0)
         {
             NSMutableDictionary *json_value = [[NSMutableDictionary alloc] init];
+            NSString *uid = [NSString stringWithFormat:@"%@",[[UIDevice currentDevice] uniqueGlobalDeviceIdentifier]];
+            [json_value setObject:uid forKey:@"DeviceId"];
+            [json_value setObject:@"test" forKey:@"DataPurpose"];
             [json_value setObject:sensorData forKey:@"sensor_data"];
             
             SBJsonWriter* writer = [ [ SBJsonWriter alloc ] init ];
@@ -717,7 +722,14 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
--(IBAction)sendMail:(id)sender {
+-(IBAction)viewConfig:(id)sender
+{
+    ConfigViewController *vC = [[ConfigViewController alloc]initWithStyle:UITableViewStyleGrouped];
+    [self.navigationController pushViewController:vC animated:YES];
+}
+
+-(void)sendMail;
+{
     NSLog(@"Mail button pressed");
     NSMutableString *sensorData = [[NSMutableString alloc] init];
     [sensorData appendString:@"Timestamp,Ambient Temperature,IR Temperature,Accelerometer X-Axis,Accelerometer Y-Axis,Accelerometer Z-Axis,Barometric Pressure,Relative Humidity,Gyroscope X,Gyroscope Y,Gyroscope Z,Magnetometer X, Magnetometer Y, Magnetometer Z\n"];

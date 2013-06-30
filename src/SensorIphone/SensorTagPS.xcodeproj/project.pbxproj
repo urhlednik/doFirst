@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		426B46AA1759D587009CE386 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 426B46A91759D587009CE386 /* Icon.png */; };
+		426B46AC1759D58B009CE386 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 426B46AB1759D58B009CE386 /* Icon@2x.png */; };
+		426B46B11759DBBF009CE386 /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 426B46AF1759DBBF009CE386 /* ConfigViewController.m */; };
+		426B46B21759DBBF009CE386 /* ConfigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 426B46B01759DBBF009CE386 /* ConfigViewController.xib */; };
 		429BBA981751FBF400978FE1 /* HTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 429BBA931751FBF400978FE1 /* HTTPRequest.m */; };
 		429BBA991751FBF400978FE1 /* HTTPRequestAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 429BBA951751FBF400978FE1 /* HTTPRequestAppDelegate.m */; };
 		429BBA9A1751FBF400978FE1 /* NetworkClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 429BBA971751FBF400978FE1 /* NetworkClient.m */; };
@@ -55,6 +59,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		426B46A91759D587009CE386 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		426B46AB1759D58B009CE386 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		426B46AE1759DBBF009CE386 /* ConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigViewController.h; sourceTree = "<group>"; };
+		426B46AF1759DBBF009CE386 /* ConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
+		426B46B01759DBBF009CE386 /* ConfigViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfigViewController.xib; sourceTree = "<group>"; };
 		429BBA921751FBF400978FE1 /* HTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPRequest.h; sourceTree = "<group>"; };
 		429BBA931751FBF400978FE1 /* HTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPRequest.m; sourceTree = "<group>"; };
 		429BBA941751FBF400978FE1 /* HTTPRequestAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPRequestAppDelegate.h; sourceTree = "<group>"; };
@@ -106,14 +115,14 @@
 		7F6FC8C416D3AEA500A5BAB9 /* _icon_72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _icon_72.png; sourceTree = "<group>"; };
 		7F6FC8C616D3AEAD00A5BAB9 /* _icon@2x_144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "_icon@2x_144.png"; sourceTree = "<group>"; };
 		7F6FC8C816D3AEDA00A5BAB9 /* _icon@2x_114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "_icon@2x_114.png"; sourceTree = "<group>"; };
-		7FF608E61654FBE1004F4562 /* SensorTagEX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SensorTagEX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FF608E61654FBE1004F4562 /* SensorTagPS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SensorTagPS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FF608EA1654FBE1004F4562 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7FF608EC1654FBE1004F4562 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7FF608EE1654FBE1004F4562 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		7FF608F21654FBE1004F4562 /* SensorTagEX-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SensorTagEX-Info.plist"; sourceTree = "<group>"; };
+		7FF608F21654FBE1004F4562 /* SensorTagPS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SensorTagPS-Info.plist"; sourceTree = "<group>"; };
 		7FF608F41654FBE1004F4562 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7FF608F61654FBE1004F4562 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7FF608F81654FBE1004F4562 /* SensorTagEX-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SensorTagEX-Prefix.pch"; sourceTree = "<group>"; };
+		7FF608F81654FBE1004F4562 /* SensorTagPS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SensorTagPS-Prefix.pch"; sourceTree = "<group>"; };
 		7FF608F91654FBE1004F4562 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7FF608FA1654FBE1004F4562 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7FF608FC1654FBE1004F4562 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -150,6 +159,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		426B46AD1759DB71009CE386 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				426B46AE1759DBBF009CE386 /* ConfigViewController.h */,
+				426B46AF1759DBBF009CE386 /* ConfigViewController.m */,
+				426B46B01759DBBF009CE386 /* ConfigViewController.xib */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
 		429BBA911751FBF400978FE1 /* network */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +255,8 @@
 		7FF608DB1654FBE1004F4562 = {
 			isa = PBXGroup;
 			children = (
+				426B46AB1759D58B009CE386 /* Icon@2x.png */,
+				426B46A91759D587009CE386 /* Icon.png */,
 				7F6FC8C816D3AEDA00A5BAB9 /* _icon@2x_114.png */,
 				7F6FC8C616D3AEAD00A5BAB9 /* _icon@2x_144.png */,
 				7F6FC8C416D3AEA500A5BAB9 /* _icon_72.png */,
@@ -251,7 +272,7 @@
 		7FF608E71654FBE1004F4562 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7FF608E61654FBE1004F4562 /* SensorTagEX.app */,
+				7FF608E61654FBE1004F4562 /* SensorTagPS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -269,6 +290,7 @@
 		7FF608F01654FBE1004F4562 /* SensorTagEX */ = {
 			isa = PBXGroup;
 			children = (
+				426B46AD1759DB71009CE386 /* view */,
 				429BBA9B1751FE0400978FE1 /* thirdparty */,
 				429BBA911751FBF400978FE1 /* network */,
 				7F43390C16D3ABAF006FE682 /* Images */,
@@ -294,10 +316,10 @@
 		7FF608F11654FBE1004F4562 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7FF608F21654FBE1004F4562 /* SensorTagEX-Info.plist */,
+				7FF608F21654FBE1004F4562 /* SensorTagPS-Info.plist */,
 				7FF608F31654FBE1004F4562 /* InfoPlist.strings */,
 				7FF608F61654FBE1004F4562 /* main.m */,
-				7FF608F81654FBE1004F4562 /* SensorTagEX-Prefix.pch */,
+				7FF608F81654FBE1004F4562 /* SensorTagPS-Prefix.pch */,
 				7FF608FC1654FBE1004F4562 /* Default.png */,
 				7FF608FE1654FBE1004F4562 /* Default@2x.png */,
 				7FF609001654FBE1004F4562 /* Default-568h@2x.png */,
@@ -308,9 +330,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7FF608E51654FBE1004F4562 /* SensorTagEX */ = {
+		7FF608E51654FBE1004F4562 /* SensorTagPS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7FF609041654FBE1004F4562 /* Build configuration list for PBXNativeTarget "SensorTagEX" */;
+			buildConfigurationList = 7FF609041654FBE1004F4562 /* Build configuration list for PBXNativeTarget "SensorTagPS" */;
 			buildPhases = (
 				7FF608E21654FBE1004F4562 /* Sources */,
 				7FF608E31654FBE1004F4562 /* Frameworks */,
@@ -320,9 +342,9 @@
 			);
 			dependencies = (
 			);
-			name = SensorTagEX;
+			name = SensorTagPS;
 			productName = SensorTagEX;
-			productReference = 7FF608E61654FBE1004F4562 /* SensorTagEX.app */;
+			productReference = 7FF608E61654FBE1004F4562 /* SensorTagPS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -334,7 +356,7 @@
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Texas Instruments";
 			};
-			buildConfigurationList = 7FF608E01654FBE1004F4562 /* Build configuration list for PBXProject "SensorTagEX" */;
+			buildConfigurationList = 7FF608E01654FBE1004F4562 /* Build configuration list for PBXProject "SensorTagPS" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -346,7 +368,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7FF608E51654FBE1004F4562 /* SensorTagEX */,
+				7FF608E51654FBE1004F4562 /* SensorTagPS */,
 			);
 		};
 /* End PBXProject section */
@@ -371,6 +393,9 @@
 				7F6FC8C516D3AEA500A5BAB9 /* _icon_72.png in Resources */,
 				7F6FC8C716D3AEAD00A5BAB9 /* _icon@2x_144.png in Resources */,
 				7F6FC8C916D3AEDA00A5BAB9 /* _icon@2x_114.png in Resources */,
+				426B46AA1759D587009CE386 /* Icon.png in Resources */,
+				426B46AC1759D58B009CE386 /* Icon@2x.png in Resources */,
+				426B46B21759DBBF009CE386 /* ConfigViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,6 +431,7 @@
 				429BBAC61751FE0400978FE1 /* SBJsonWriter.m in Sources */,
 				429BBAC71751FE0400978FE1 /* NSString+MD5Addition.m in Sources */,
 				429BBAC81751FE0400978FE1 /* UIDevice+IdentifierAddition.m in Sources */,
+				426B46B11759DBBF009CE386 /* ConfigViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,11 +504,13 @@
 		7FF609051654FBE1004F4562 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jung Nam Lee";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SensorTagEX/SensorTagEX-Prefix.pch";
-				INFOPLIST_FILE = "SensorTagEX/SensorTagEX-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "SensorTagEX/SensorTagPS-Prefix.pch";
+				INFOPLIST_FILE = "SensorTagEX/SensorTagPS-Info.plist";
+				PRODUCT_NAME = SensorTagPS;
+				PROVISIONING_PROFILE = "8A2964E1-B685-4DAF-BB82-2A127748E698";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -491,11 +519,13 @@
 		7FF609061654FBE1004F4562 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jung Nam Lee";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SensorTagEX/SensorTagEX-Prefix.pch";
-				INFOPLIST_FILE = "SensorTagEX/SensorTagEX-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "SensorTagEX/SensorTagPS-Prefix.pch";
+				INFOPLIST_FILE = "SensorTagEX/SensorTagPS-Info.plist";
+				PRODUCT_NAME = SensorTagPS;
+				PROVISIONING_PROFILE = "8A2964E1-B685-4DAF-BB82-2A127748E698";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -504,7 +534,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7FF608E01654FBE1004F4562 /* Build configuration list for PBXProject "SensorTagEX" */ = {
+		7FF608E01654FBE1004F4562 /* Build configuration list for PBXProject "SensorTagPS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7FF609021654FBE1004F4562 /* Debug */,
@@ -513,7 +543,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7FF609041654FBE1004F4562 /* Build configuration list for PBXNativeTarget "SensorTagEX" */ = {
+		7FF609041654FBE1004F4562 /* Build configuration list for PBXNativeTarget "SensorTagPS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7FF609051654FBE1004F4562 /* Debug */,

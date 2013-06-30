@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7FF608E51654FBE1004F4562"
-               BuildableName = "SensorTagEX.app"
-               BlueprintName = "SensorTagEX"
-               ReferencedContainer = "container:SensorTagEX.xcodeproj">
+               BuildableName = "SensorTagPS.app"
+               BlueprintName = "SensorTagPS"
+               ReferencedContainer = "container:SensorTagPS.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7FF608E51654FBE1004F4562"
-            BuildableName = "SensorTagEX.app"
-            BlueprintName = "SensorTagEX"
-            ReferencedContainer = "container:SensorTagEX.xcodeproj">
+            BuildableName = "SensorTagPS.app"
+            BlueprintName = "SensorTagPS"
+            ReferencedContainer = "container:SensorTagPS.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -52,9 +52,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7FF608E51654FBE1004F4562"
-            BuildableName = "SensorTagEX.app"
-            BlueprintName = "SensorTagEX"
-            ReferencedContainer = "container:SensorTagEX.xcodeproj">
+            BuildableName = "SensorTagPS.app"
+            BlueprintName = "SensorTagPS"
+            ReferencedContainer = "container:SensorTagPS.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -70,9 +70,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7FF608E51654FBE1004F4562"
-            BuildableName = "SensorTagEX.app"
-            BlueprintName = "SensorTagEX"
-            ReferencedContainer = "container:SensorTagEX.xcodeproj">
+            BuildableName = "SensorTagPS.app"
+            BlueprintName = "SensorTagPS"
+            ReferencedContainer = "container:SensorTagPS.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

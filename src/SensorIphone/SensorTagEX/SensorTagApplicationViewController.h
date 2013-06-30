@@ -55,6 +55,7 @@
 -(void) alphaFader:(NSTimer *)timer;
 -(void) logValues:(NSTimer *)timer;
 
--(IBAction)sendMail:(id)sender;
+-(IBAction)viewConfig:(id)sender;
+-(void)sendMail;
 
 @end
