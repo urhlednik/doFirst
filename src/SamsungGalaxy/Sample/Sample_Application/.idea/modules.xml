@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/BleAnpServer/BleAnpServer.iml" filepath="$PROJECT_DIR$/BleAnpServer/BleAnpServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BleHrpCollector/BleHrpCollector.iml" filepath="$PROJECT_DIR$/BleHrpCollector/BleHrpCollector.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BlePxpApp/BlePxpApp.iml" filepath="$PROJECT_DIR$/BlePxpApp/BlePxpApp.iml" />
+    </modules>
+  </component>
+</project>
+

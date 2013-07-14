@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="samsung_ble_sdk_200 (2)">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/BleHrpCollector/lib/samsung_ble_sdk_200.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

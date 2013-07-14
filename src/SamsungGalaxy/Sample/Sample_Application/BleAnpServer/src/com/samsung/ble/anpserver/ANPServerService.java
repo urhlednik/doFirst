@@ -16,10 +16,22 @@
 
 package com.samsung.ble.anpserver;
 
-import java.io.UnsupportedEncodingException;
-import java.util.List;
-import java.util.Set;
-import java.util.UUID;
+import android.app.Service;
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
+import android.bluetooth.BluetoothProfile;
+import android.content.Intent;
+import android.database.ContentObserver;
+import android.database.Cursor;
+import android.net.Uri;
+import android.os.Binder;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.IBinder;
+import android.os.Message;
+import android.os.Process;
+import android.provider.CallLog;
+import android.util.Log;
 
 import com.samsung.android.sdk.bt.gatt.BluetoothGattAdapter;
 import com.samsung.android.sdk.bt.gatt.BluetoothGattCharacteristic;
@@ -31,24 +43,8 @@ import com.samsung.android.sdk.bt.gatt.MutableBluetoothGattCharacteristic;
 import com.samsung.android.sdk.bt.gatt.MutableBluetoothGattDescriptor;
 import com.samsung.android.sdk.bt.gatt.MutableBluetoothGattService;
 
-import android.app.Service;
-import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.BluetoothDevice;
-import android.bluetooth.BluetoothProfile;
-import android.content.BroadcastReceiver;
-import android.content.Intent;
-import android.database.ContentObserver;
-import android.database.Cursor;
-import android.net.Uri;
-import android.os.Binder;
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
-import android.os.Process;
-import android.os.IBinder;
-import android.provider.CallLog;
-import android.util.Log;
-import android.widget.Toast;
+import java.io.UnsupportedEncodingException;
+import java.util.UUID;
 
 public class ANPServerService extends Service {
 
