@@ -60,7 +60,7 @@ class Page_Updata_log(webapp2.RequestHandler):
 
     def post(self):
 		getData = self.request.get("sensor_data")
-		self.response.write(getData)
+#		self.response.write(getData)
 		json_data = json.loads(getData)
 
 		ProcessDataTrans(json_data)
