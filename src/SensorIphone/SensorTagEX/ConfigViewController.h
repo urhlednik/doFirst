@@ -13,4 +13,6 @@
     NSArray *m_configList;
 }
 
+//@property (strong,nonatomic) SensorTagApplicationViewController *parentSensorTag;
+
 @end

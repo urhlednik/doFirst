@@ -12,12 +12,17 @@
 #import "deviceCellTemplate.h"
 #import "Sensors.h"
 #import <MessageUI/MessageUI.h>
+#import "DumbbelPress.h"
 
 #define MIN_ALPHA_FADE 0.2f
 #define ALPHA_FADE_STEP 0.05f
 
 
 @interface SensorTagApplicationViewController : UITableViewController <CBCentralManagerDelegate,CBPeripheralDelegate,MFMailComposeViewControllerDelegate>
+{
+    DumbbelPress    *m_dumbbelPress;
+    int             m_currDumbbelPressCount;
+}
 
 @property (strong,nonatomic) BLEDevice *d;
 @property NSMutableArray *sensorsEnabled;
@@ -34,10 +39,14 @@
 @property (strong,nonatomic) accelerometerCellTemplate *gyro;
 @property (strong,nonatomic) sensorIMU3000 *gyroSensor;
 @property (strong,nonatomic) sendServerCellTemplate *sendControl;
+@property (strong,nonatomic) DumbbelPressCellTemplate *dumbbelControl;
 
 @property (strong,nonatomic) sensorTagValues *currentVal;
 @property (strong,nonatomic) NSMutableArray *vals;
 @property (strong,nonatomic) NSTimer *logTimer;
+
+@property (strong,nonatomic) NSMutableArray *sendDataList;
+
 
 @property float logInterval;
 

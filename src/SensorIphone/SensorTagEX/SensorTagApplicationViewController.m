@@ -91,7 +91,9 @@
         if (!self.sendControl) {
             self.sendControl = [[sendServerCellTemplate alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SendServer"]; //[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SendServer"]; //
         }
-        
+        if (!self.dumbbelControl) {
+            self.dumbbelControl = [[DumbbelPressCellTemplate alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"dumbbelView"];
+        }
 
     }
     [NSTimer scheduledTimerWithTimeInterval:0.1f target:self selector:@selector(alphaFader:) userInfo:nil repeats:YES];
@@ -99,7 +101,7 @@
     self.currentVal = [[sensorTagValues alloc]init];
     self.vals = [[NSMutableArray alloc]init];
     
-    self.logInterval = 1.0; //1000 ms
+    self.logInterval = 0.1; //100 ms
     
     self.logTimer = [NSTimer scheduledTimerWithTimeInterval:self.logInterval target:self selector:@selector(logValues:) userInfo:nil repeats:YES];
     
@@ -190,12 +192,14 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return self.sensorsEnabled.count+1;
+    return self.sensorsEnabled.count+2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row >= self.sensorsEnabled.count) return self.sendControl;//return [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Unkown Cell"];
+    if (indexPath.row == self.sensorsEnabled.count+1) return self.sendControl;
+    else if (indexPath.row == self.sensorsEnabled.count+2) return self.dumbbelControl;
+    //return [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Unkown Cell"];
     
     NSString *cellType = [self.sensorsEnabled objectAtIndex:indexPath.row];
     
@@ -224,6 +228,10 @@
     else if ([cellType isEqualToString:@"SendServer"])
     {
         return self.sendControl;
+    }
+    else if ([cellType isEqualToString:@"dumbbelView"])
+    {
+        return self.dumbbelControl;
     }
     
     // Something has gone wrong, because we should never get here, return empty cell
@@ -665,9 +673,16 @@
 
 
 -(void) logValues:(NSTimer *)timer {
-    NSString *date = [NSDateFormatter localizedStringFromDate:[NSDate date]
-                                                    dateStyle:NSDateFormatterShortStyle
-                                                    timeStyle:NSDateFormatterMediumStyle];
+//    NSString *date = [NSDateFormatter localizedStringFromDate:[NSDate date]
+//                                                    dateStyle:NSDateFormatterShortStyle
+//                                                    timeStyle:NSDateFormatterMediumStyle];
+    
+    NSDateFormatter *inputformatter = [[NSDateFormatter alloc] init];
+    //데이트 형식을 지정한다.
+    [inputformatter setDateFormat:@"yyyy-MM-dd 'at' HH:mm:ss:SSS"];
+    
+    NSString *date = [inputformatter stringFromDate:[NSDate date]];
+    
     self.currentVal.timeStamp = date;
     sensorTagValues *newVal = [[sensorTagValues alloc]init];
     newVal.tAmb = self.currentVal.tAmb;
@@ -687,12 +702,28 @@
     
     [self.vals addObject:newVal];
     
-    static unsigned int count = 0;
-    if (self.sendControl.onOffSwitch.on && (count++ % 50)==0)
+    if (m_dumbbelPress == NULL) {
+        m_dumbbelPress = [DumbbelPress new];
+    }
+    
+    m_currDumbbelPressCount = [m_dumbbelPress getDumbbelPressCount:newVal];
+    if (self.dumbbelControl) {
+        self.dumbbelControl.pressCount = m_currDumbbelPressCount;
+    }
+    
+    /*
+    const int MASK_FLAG_SENDING = 1;
+    static int sendingFlag = 0;
+    if (self.sendControl.onOffSwitch.on && OSAtomicAnd32(MASK_FLAG_SENDING, &sendingFlag) == FALSE && self.vals.count > 10*60)      // 10*100ms (1초) * 60 -> 1분
     {
+        OSAtomicTestAndSet(MASK_FLAG_SENDING, &sendingFlag);
+        NSMutableArray *sendDatas = self.vals;
+        self.vals = [[NSMutableArray alloc] init];
+        
+        
         NSMutableArray *sensorData = [[NSMutableArray alloc] init];
-        for (int ii=0; ii < self.vals.count; ii++) {
-            sensorTagValues *s = [self.vals objectAtIndex:ii];
+        for (int ii=0; ii < sendDatas.count; ii++) {
+            sensorTagValues *s = [sendDatas objectAtIndex:ii];
             [sensorData addObject:[NSString stringWithFormat:@"%@,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f",s.timeStamp,s.tAmb,s.tIR,s.accX,s.accY,s.accZ,s.press,s.humidity,s.gyroX,s.gyroY,s.gyroZ,s.magX,s.magY,s.magZ]];
         }
         
@@ -714,7 +745,10 @@
             [args setObject:jsonString forKey:@"sensor_data"];
             [[NetworkClient sharedInstance] requestLogList:args];
         }
+        
+        OSAtomicTestAndClear(MASK_FLAG_SENDING, &sendingFlag);
     }
+     */
 }
 
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
@@ -724,8 +758,10 @@
 
 -(IBAction)viewConfig:(id)sender
 {
-    ConfigViewController *vC = [[ConfigViewController alloc]initWithStyle:UITableViewStyleGrouped];
-    [self.navigationController pushViewController:vC animated:YES];
+    [self sendMail];
+//    ConfigViewController *vC = [[ConfigViewController alloc]initWithStyle:UITableViewStyleGrouped];
+//    vC.parentVc = self;
+//    [self.navigationController pushViewController:vC animated:YES];
 }
 
 -(void)sendMail;

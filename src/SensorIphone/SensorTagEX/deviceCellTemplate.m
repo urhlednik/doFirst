@@ -479,8 +479,9 @@
         self.titleLabel = [[UILabel alloc] init];
         self.titleLabel.textAlignment = NSTextAlignmentLeft;
         self.titleLabel.font = [UIFont boldSystemFontOfSize:8];
+        [self.contentView addSubview:self.titleLabel];
+
         self.onOffSwitch = [[UISwitch alloc] init];
-        
         [self.contentView addSubview:self.onOffSwitch];
     }
     return self;
@@ -504,3 +505,48 @@
 }
 
 @end
+
+
+@implementation DumbbelPressCellTemplate
+@synthesize onOffSwitch, height, titleLabel, pressCount;
+
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        
+        self.backgroundColor = [UIColor whiteColor];
+        self.accessoryType = UITableViewCellStyleDefault;
+        self.height = 250;
+        
+        // Initialization code
+        self.titleLabel = [[UILabel alloc] init];
+        self.titleLabel.textAlignment = NSTextAlignmentLeft;
+        self.titleLabel.font = [UIFont boldSystemFontOfSize:8];
+        [self.contentView addSubview:self.titleLabel];
+        
+        self.onOffSwitch = [[UISwitch alloc] init];
+        [self.contentView addSubview:self.onOffSwitch];
+    }
+    return self;
+}
+
+
+-(void)layoutSubviews {
+    [super layoutSubviews];
+    CGRect contentRect = self.contentView.bounds;
+    CGRect fr;
+    
+    fr = CGRectMake(5, 10,100,25);
+    self.titleLabel.frame = fr;
+    self.titleLabel.text = [NSString stringWithFormat:@"Press %d",pressCount];
+    self.titleLabel.textColor = [UIColor blackColor];
+    self.titleLabel.backgroundColor = [UIColor clearColor];
+    
+    fr = CGRectMake(120, 10,120,35);
+    self.onOffSwitch.frame = fr;
+    
+}
+
+@end
+

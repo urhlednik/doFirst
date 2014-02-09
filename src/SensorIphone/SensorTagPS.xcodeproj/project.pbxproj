@@ -28,6 +28,9 @@
 		429BBAC61751FE0400978FE1 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 429BBAB51751FE0400978FE1 /* SBJsonWriter.m */; };
 		429BBAC71751FE0400978FE1 /* NSString+MD5Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 429BBAB81751FE0400978FE1 /* NSString+MD5Addition.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		429BBAC81751FE0400978FE1 /* UIDevice+IdentifierAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 429BBABA1751FE0400978FE1 /* UIDevice+IdentifierAddition.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		42D4BB04179236E200719839 /* FitnessManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D4BB03179236E200719839 /* FitnessManager.m */; };
+		42D4BB071792375A00719839 /* DumbbelPress.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D4BB061792375A00719839 /* DumbbelPress.m */; };
+		42D4BB0A17923EB000719839 /* DumbbelPressResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D4BB0917923EB000719839 /* DumbbelPressResult.m */; };
 		7F43391816D3ABAF006FE682 /* accelerometer.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F43390D16D3ABAF006FE682 /* accelerometer.png */; };
 		7F43391916D3ABAF006FE682 /* barometer.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F43390E16D3ABAF006FE682 /* barometer.png */; };
 		7F43391A16D3ABAF006FE682 /* gyroscope.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F43390F16D3ABAF006FE682 /* gyroscope.png */; };
@@ -99,6 +102,12 @@
 		429BBAB81751FE0400978FE1 /* NSString+MD5Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5Addition.m"; sourceTree = "<group>"; };
 		429BBAB91751FE0400978FE1 /* UIDevice+IdentifierAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+IdentifierAddition.h"; sourceTree = "<group>"; };
 		429BBABA1751FE0400978FE1 /* UIDevice+IdentifierAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+IdentifierAddition.m"; sourceTree = "<group>"; };
+		42D4BB02179236E200719839 /* FitnessManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FitnessManager.h; path = fitness/FitnessManager.h; sourceTree = "<group>"; };
+		42D4BB03179236E200719839 /* FitnessManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FitnessManager.m; path = fitness/FitnessManager.m; sourceTree = "<group>"; };
+		42D4BB051792375A00719839 /* DumbbelPress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DumbbelPress.h; path = fitness/DumbbelPress.h; sourceTree = "<group>"; };
+		42D4BB061792375A00719839 /* DumbbelPress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DumbbelPress.m; path = fitness/DumbbelPress.m; sourceTree = "<group>"; };
+		42D4BB0817923EB000719839 /* DumbbelPressResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DumbbelPressResult.h; path = fitness/DumbbelPressResult.h; sourceTree = "<group>"; };
+		42D4BB0917923EB000719839 /* DumbbelPressResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DumbbelPressResult.m; path = fitness/DumbbelPressResult.m; sourceTree = "<group>"; };
 		7F43390D16D3ABAF006FE682 /* accelerometer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = accelerometer.png; sourceTree = "<group>"; };
 		7F43390E16D3ABAF006FE682 /* barometer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barometer.png; sourceTree = "<group>"; };
 		7F43390F16D3ABAF006FE682 /* gyroscope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gyroscope.png; sourceTree = "<group>"; };
@@ -234,6 +243,19 @@
 			path = uid;
 			sourceTree = "<group>";
 		};
+		42D4BB01179236BF00719839 /* Fitness */ = {
+			isa = PBXGroup;
+			children = (
+				42D4BB02179236E200719839 /* FitnessManager.h */,
+				42D4BB03179236E200719839 /* FitnessManager.m */,
+				42D4BB051792375A00719839 /* DumbbelPress.h */,
+				42D4BB061792375A00719839 /* DumbbelPress.m */,
+				42D4BB0817923EB000719839 /* DumbbelPressResult.h */,
+				42D4BB0917923EB000719839 /* DumbbelPressResult.m */,
+			);
+			name = Fitness;
+			sourceTree = "<group>";
+		};
 		7F43390C16D3ABAF006FE682 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +312,7 @@
 		7FF608F01654FBE1004F4562 /* SensorTagEX */ = {
 			isa = PBXGroup;
 			children = (
+				42D4BB01179236BF00719839 /* Fitness */,
 				426B46AD1759DB71009CE386 /* view */,
 				429BBA9B1751FE0400978FE1 /* thirdparty */,
 				429BBA911751FBF400978FE1 /* network */,
@@ -432,6 +455,9 @@
 				429BBAC71751FE0400978FE1 /* NSString+MD5Addition.m in Sources */,
 				429BBAC81751FE0400978FE1 /* UIDevice+IdentifierAddition.m in Sources */,
 				426B46B11759DBBF009CE386 /* ConfigViewController.m in Sources */,
+				42D4BB04179236E200719839 /* FitnessManager.m in Sources */,
+				42D4BB071792375A00719839 /* DumbbelPress.m in Sources */,
+				42D4BB0A17923EB000719839 /* DumbbelPressResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -122,3 +122,16 @@
 @property int height;
 @end
 
+@interface DumbbelPressCellTemplate : UITableViewCell
+{
+    UILabel *titleLabel;
+    UISwitch *onOffSwitch;
+    int height;
+}
+
+@property (nonatomic,retain) UISwitch *onOffSwitch;
+@property (nonatomic,retain) UILabel *titleLabel;
+@property int height;
+
+@property (nonatomic) int pressCount;
+@end

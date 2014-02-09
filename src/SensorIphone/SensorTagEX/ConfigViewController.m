@@ -8,12 +8,16 @@
 
 #import "ConfigViewController.h"
 #import "UIDevice+IdentifierAddition.h"
+#import "SensorTagApplicationViewController.h"
 
 @interface ConfigViewController ()
 
 @end
 
+
+
 @implementation ConfigViewController
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -100,6 +104,7 @@
             UIButton *sendMailButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
             [sendMailButton setTitle:@"SEND MAIL" forState:UIControlStateNormal];
             [sendMailButton setFrame:CGRectMake(5, 5, 250, 35)];
+            [sendMailButton addTarget:self action:@selector(sendButtonClick:) forControlEvents:(UIControlEvents)UIControlEventTouchDown];
             [cell addSubview:sendMailButton];
         }
         
@@ -164,7 +169,7 @@
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+{    
     // Navigation logic may go here. Create and push another view controller.
     /*
      <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
@@ -172,6 +177,12 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+}
+
+-  (void)sendButtonClick:(id)sender {
+    
+//    SensorTagApplicationViewController *parent =  (SensorTagApplicationViewController *)self.parentSensorTag;
+//    [ sendMail];
 }
 
 @end
